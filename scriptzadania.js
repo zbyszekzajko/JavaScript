@@ -158,8 +158,12 @@ function char11() {
 		}
 	}
 	noLetter
-		? document.getElementById("11").innerHTML=`Podany ciąg składa się wyłącznie z liter alfabetu`
-		: document.getElementById("11").innerHTML=`Podany ciąg zawiera znaki z poza alfabetu`;
+		? (document.getElementById(
+				"11"
+		  ).innerHTML = `Podany ciąg składa się wyłącznie z liter alfabetu`)
+		: (document.getElementById(
+				"11"
+		  ).innerHTML = `Podany ciąg zawiera znaki z poza alfabetu`);
 }
 
 // 12. Napisz program, który pobiera od użytkownika dwa ciągi znaków i sprawdza, czy są
@@ -195,6 +199,9 @@ const camelCase = () => {
 // użytkownik zgadł liczbę czy nie, oraz podpowiedzi, czy podana liczba jest za mała lub
 // za duża. Program powinien kontynuować grę, aż użytkownik zgadnie poprawnie
 // wylosowaną liczbę.
+
+const game = () => {};
+
 
 // 15. Napisz program, który pobiera od użytkownika ciąg znaków (hasło) i sprawdza, czy
 // spełnia ono następujące warunki bezpieczeństwa: ma co najmniej 8 znaków, zawiera
