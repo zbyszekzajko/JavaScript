@@ -200,8 +200,17 @@ const camelCase = () => {
 // za duża. Program powinien kontynuować grę, aż użytkownik zgadnie poprawnie
 // wylosowaną liczbę.
 
-const game = () => {};
-
+let runNumber = Math.floor(Math.random() * 10) + 1;
+const game = () => {
+	let guessNumber = parseInt(document.querySelector("#guessNumber").value);
+console.log(runNumber);
+console.log(guessNumber);
+	if (runNumber == guessNumber)
+		console.log(`Brawo zgadłeś!!! Wylosowana liczba to ${guessNumber}`);
+	else if (runNumber < guessNumber)
+		console.log(`Podana liczba jest mniejsza od ${guessNumber} `);
+	else console.log(`Podana liczba jest większa od ${guessNumber}`);
+};
 
 // 15. Napisz program, który pobiera od użytkownika ciąg znaków (hasło) i sprawdza, czy
 // spełnia ono następujące warunki bezpieczeństwa: ma co najmniej 8 znaków, zawiera
