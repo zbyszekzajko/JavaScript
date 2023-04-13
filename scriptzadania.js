@@ -312,11 +312,63 @@ const surnameSort = () => {
 	console.log(arr20);
 	document.getElementById("20").innerHTML = `${arr20.join(", ")}`;
 };
-// 6. Napisz program, który poprosi użytkownika o wprowadzenie listy
+// 21. Napisz program, który poprosi użytkownika o wprowadzenie listy
 // towarów oddzielonych przecinkami. Następnie program powinien
 // utworzyć tablicę obiektów, gdzie każdy obiekt zawiera nazwę towaru
 // i losową cenę. Cena powinna być wylosowana z przedziału od 0.01
 // do 99.99. Wyświetl zawartość tablicy.
-// 7. Zadeklaruj (w kodzie programu) tablicę studentów, gdzie każdy
+
+const arrItems = () => {
+	let i = 0;
+	let arr21Items = [];
+	let arr21 = document.getElementById("number21").value.split(",");
+	console.log(arr21);
+	arr21.forEach(element => {
+		arr21Items.push({
+			nazwaTowaru: element,
+			cena: Number((Math.random() * 100).toFixed(2)),
+		});
+	});
+	console.table(arr21Items);
+	};
+
+// 22. Zadeklaruj (w kodzie programu) tablicę studentów, gdzie każdy
 // student ma imię, nazwisko i liczbę punktów (od 0 do 100). Następnie
 // oblicz średnią punktów i wypisz dane studentów którzy zdobyli
+// więcej niż wynosi średnia.
+
+const arrStudents = () => {
+	let sum = 0;
+	arr22 = [
+		{
+			firstName: "Adam",
+			lastName: "Kot",
+			numberOfPoints: "50",
+		},
+		{
+			firstName: "Tomek",
+			lastName: "Kowalewski",
+			numberOfPoints: "80",
+		},
+		{
+			firstName: "Andzrej",
+			lastName: "Sambor",
+			numberOfPoints: "90",
+		},
+		{
+			firstName: "Kamil",
+			lastName: "Las",
+			numberOfPoints: "60",
+		},
+	];
+	for (let i = 0; i < arr22.length; i++) {
+		sum += Number(arr22[i].numberOfPoints);
+	}
+	let avr = sum / arr22.length;
+	console.log(avr);
+	arr22.forEach(element => {
+		if (element.numberOfPoints > avr)
+			console.log(element.firstName, element.numberOfPoints);
+	});
+};
+arrStudents();
