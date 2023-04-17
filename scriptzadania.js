@@ -173,6 +173,21 @@ function char11() {
 // anagramami". W przeciwnym razie program powinien wyświetlić komunikat "Podane
 // ciągi nie są anagramami".
 
+const srt = (a, b) => {
+	return a.localeCompare(b);
+};
+const anagram = () => {
+	let arr12 = document.getElementById("anagram12").value.split(",");
+
+	if (
+		arr12[0].trim().split("").sort(srt).join("") ===
+		arr12[1].trim().split("").sort(srt).join("")
+	)
+		document.getElementById("12").innerHTML = `Ciągi znaków są anagramami`;
+	else
+		document.getElementById("12").innerHTML = `Ciągi znaków nie są anagramami`;
+};
+
 // 13. Napisz program, który zamienia wprowadzony przez użytkownika ciąg znaków na tzw.
 // "camel case". "Camel case" to styl pisania nazw, w którym każde słowo zaczyna się
 // wielką literą, z wyjątkiem pierwszego słowa, które zapisujemy małymi literami. Na
@@ -330,7 +345,7 @@ const arrItems = () => {
 		});
 	});
 	console.table(arr21Items);
-	};
+};
 
 // 22. Zadeklaruj (w kodzie programu) tablicę studentów, gdzie każdy
 // student ma imię, nazwisko i liczbę punktów (od 0 do 100). Następnie
