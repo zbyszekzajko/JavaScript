@@ -61,7 +61,7 @@ const reverse = () => {
 
 const rep5 = () => {
 	let word1 = document.getElementById("word1").value;
-	let newWord1 = word1.replaceAll("a", "b");
+	let newWord1 = word1.replaceAll("a", "o");
 	document.getElementById("5").innerHTML = `Zamieniona litera ${newWord1}`;
 };
 
@@ -234,6 +234,22 @@ const game = () => {
 // literą ani cyfrą (np. !, @, # itp.). Jeśli hasło spełnia powyższe warunki, program
 // powinien wyświetlić komunikat "Hasło jest bezpieczne". W przeciwnym razie program
 // powinien wyświetlić komunikat "Hasło nie spełnia wymagań bezpieczeństwa".
+
+const pass = () => {
+	let password = document.getElementById("password").value.trim();
+	console.log(password.length);
+	if (
+		password.length >= 8 &&
+		password.match(/[A-Z]/) &&
+		password.match(/[a-z]/) &&
+		password.match(/[!@#$%^&*()-+?]/)
+	)
+		document.getElementById("15").innerHTML = `Hasło jest bezpieczne`;
+	else
+		document.getElementById(
+			"15"
+		).innerHTML = `Hasło nie spełnia wymagań bezpieczeństwa`;
+};
 
 // 16. Napisz program, który pobiera od użytkownika dwie liczby całkowite i
 // wyświetla wszystkie liczby między nimi, włącznie z tymi liczbami. Na
