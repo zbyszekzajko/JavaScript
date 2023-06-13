@@ -110,3 +110,4 @@ const maxPoint = (a, b) => {
 	else return b;
 };
 console.log(arr2.reduce(maxPoint));
+
