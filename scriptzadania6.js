@@ -167,6 +167,9 @@ class Sklep {
 	}
 	wyswietl() {
 		console.table(sklep.produkty);
+		for (let v of sklep.produkty) {
+			console.log(v.nazwa);
+		}
 	}
 }
 
