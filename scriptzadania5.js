@@ -171,7 +171,8 @@ if (localStorage.length > 0) {
 		).innerHTML = `${element.minuty} min : ${element.sekundy} sec : ${element.milisec} ms`;
 	});
 }
-//localStorage.clear();
+// localStorage.clear();
+
 // 8. Minutnik
 
 // · Napisz program, który pozwoli na realizację prostego minutnika. Użytkownik wybiera liczbę minut i sekund do odmierzenia, po czym uruchamia przyciskiem minutnik. Czas jest odliczany „w dół” i na bieżąco wyświetlany na ekranie. Po dobięgnięciu licznika do 0, wyświetlany jest komunikat a ekran zmienia kolor.
@@ -222,3 +223,33 @@ setInterval(moveElement, 10);
 // 10. Powiadomienia na żywo (***)
 
 // · Napisz program, który symuluje powiadomienia na żywo. Co losową liczbę sekund na ekranie pojawia się nowe powiadomienie, które przez pewien czas pozostaje wyświetlone, a następnie zniknie. Wykorzystaj funkcji setTimeout lub/i setInterval do generowania nowych powiadomień i zarządzania ich widocznością na ekranie.
+
+let arr10 = [
+	"komunikat nr.1",
+	"komunikat nr.2",
+	"komunikat nr.3",
+	"komunikat nr.4",
+];
+let index = 0;
+
+const showNotification = () => {
+	if (index < arr10.length)
+		document.getElementById("10").innerHTML = `${arr10[index]}`;
+	index++;
+	if (index == arr10.length) index = 0;
+};
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const generateNotification = () => {
+	const delay = getRandomInt(1000, 5000);
+	console.log(delay);
+	setTimeout(function () {
+		showNotification();
+		generateNotification();
+	}, delay);
+};
+
+generateNotification();
