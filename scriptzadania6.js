@@ -158,16 +158,16 @@ class Sklep {
 	}
 	usun(usunPR) {
 		this.usunPR = usunPR;
-		sklep.produkty.forEach(element => {
+		this.produkty.forEach(element => {
 			if (element.nazwa == this.usunPR) {
-				sklep.produkty.splice(this.i, 1);
+				this.produkty.splice(this.i, 1);
 			}
 			this.i++;
 		});
 	}
 	wyswietl() {
-		console.table(sklep.produkty);
-		for (let v of sklep.produkty) {
+		console.table(this.produkty);
+		for (let v of this.produkty) {
 			console.log(v.nazwa);
 		}
 	}
